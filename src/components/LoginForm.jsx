@@ -12,30 +12,51 @@ const LoginForm = () => {
 
   const handleSubmit = (e) => {
     e.preventDefault();
-    if (username === 'admin' && password === 'password') {
+    // ✅ Update to match the Cypress test expectations
+    if (username === 'user' && password === 'password') {
       login(username, remember);
       navigate('/home');
     } else {
-      setError('Invalid credentials');
+      // ✅ Error message that matches the test
+      setError('Invalid username or password');
     }
   };
 
   return (
     <form onSubmit={handleSubmit} style={{ maxWidth: '400px', margin: 'auto' }}>
       <h2>Login</h2>
+      {/* ✅ Render error message if any */}
       {error && <p style={{ color: 'red' }}>{error}</p>}
+
       <div>
         <label>Username:</label>
-        <input type="text" value={username} onChange={(e) => setUsername(e.target.value)} required />
+        <input
+          type="text"
+          value={username}
+          onChange={(e) => setUsername(e.target.value)}
+          required
+        />
       </div>
+
       <div>
         <label>Password:</label>
-        <input type="password" value={password} onChange={(e) => setPassword(e.target.value)} required />
+        <input
+          type="password"
+          value={password}
+          onChange={(e) => setPassword(e.target.value)}
+          required
+        />
       </div>
+
       <div>
-        <input type="checkbox" checked={remember} onChange={(e) => setRemember(e.target.checked)} />
+        <input
+          type="checkbox"
+          checked={remember}
+          onChange={(e) => setRemember(e.target.checked)}
+        />
         <label>Remember Me</label>
       </div>
+
       <button type="submit">Login</button>
     </form>
   );
