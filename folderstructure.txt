@@ -1,0 +1,27 @@
+/login-page/
+│
+├── /public/
+│   └── index.html
+│
+├── /src/
+│   ├── /components/
+│   │   └── LoginForm.jsx
+│   │
+│   ├── /pages/
+│   │   ├── Home.jsx
+│   │   └── Login.jsx
+│   │
+│   ├── /routes/
+│   │   └── PrivateRoute.jsx
+│   │
+│   ├── /services/
+│   │   └── authStorage.js
+│   │
+│   ├── /context/
+│   │   └── AuthContext.jsx
+│   │
+│   ├── App.jsx
+│   ├── index.js
+│
+├── package.json
+└── README.md
